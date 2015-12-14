@@ -16,6 +16,23 @@
         </resource-bundle>
     </application>
     
+    <navigation-rule>
+        <from-view-id>*.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Accueil</from-outcome>
+            <to-view-id>/Accueil.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/Accueil.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{personDetails.showPerson(person)}</from-action>          
+            <from-outcome>show</from-outcome>
+            <to-view-id>/PersonDetails.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
    
 
 </faces-config>
