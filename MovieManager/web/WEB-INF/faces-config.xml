@@ -33,6 +33,14 @@
         </navigation-case>
     </navigation-rule>
     
+    <navigation-rule>
+        <from-view-id>/PersonDetails.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{movieDetails.showMovie(movie)}</from-action>          
+            <from-outcome>showmovie</from-outcome>
+            <to-view-id>/MovieDetails.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
    
 
 </faces-config>

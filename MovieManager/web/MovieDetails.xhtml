@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>
+            <h:outputText value="#{rsrc['movie.details.title']}"/>
+        </title>
+    </h:head>
+
+    <h:body>
+        <div class="container">
+        <h2>
+            <h:outputText value="#{rsrc['movie.details.title']}"/>
+        </h2>
+            <h:panelGrid border="0" columns="2">
+                <h:outputLabel value="#{rsrc['movie.id']} : " />
+                <h:outputText value="#{movieDetails.movie.id}"/>
+                <h:outputLabel value="#{rsrc['movie.name']} : " />
+                <h:outputText value="#{movieDetails.movie.name}"/>
+                <h:outputLabel value="#{rsrc['movie.producer']} : " />
+                <h:outputText value="#{movieDetails.movie.producer}"/>
+            </h:panelGrid>
+
+            <h3>
+                <h:outputText value="#{rsrc['movie.details.list.people']}"/>
+            </h3>
+            <h:form id="peopleListForm">
+                <h:dataTable id="dtPersonsMovies" var="person" value="#{movieDetails.personMovies}">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{rsrc['person.id']}" />
+                        </f:facet>
+                        <h:outputText value="#{person.id}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{rsrc['person.firstName']}"/>
+                        </f:facet>
+                        <h:commandLink value="#{person.firstName}" action="#{personDetails.showPerson(person)}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{rsrc['person.lastName']}" />
+                        </f:facet>
+                        <h:outputText value="#{person.lastName}"/>
+                    </h:column>
+                </h:dataTable>
+                <br/>
+                <h:commandButton id="cmdBtnGoHome" value="#{rsrc['button.label.home']}" action="Accueil.xhtml" />
+            </h:form>
+        </div>
+    </h:body>
+
+</html>
+

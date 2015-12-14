@@ -27,7 +27,7 @@ public class MoviesDetailsBean implements Serializable {
             return "error";
         } else {
             movie = m;
-            return "display";
+            return "showmovie";
         }
     }
 
